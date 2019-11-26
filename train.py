@@ -13,6 +13,8 @@ from dataset import DIV2K_Dataset
 from model import EDSR
 import tqdm
 
+config = config['train']
+
 scale = config['scale']
 batch_size = config['batch_size']
 learning_rate = float(config['learning_rate'])
@@ -57,7 +59,7 @@ def loss_fn(sr, gt):
 
 
 if __name__ == '__main__':
-    set_seed(2019)
+    set_seed(2019)      # Set seed to produce the same training results
 
     model = EDSR(upscale=scale)
     model = nn.DataParallel(model, device_ids=[0])

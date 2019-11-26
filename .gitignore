@@ -1,6 +1,7 @@
 DIV2K_train_HR/
 output/
 .idea/
+result_x4/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,14 +1,25 @@
-scale: 4
-batch_size: 16
-learning_rate: 1e-4
-weight_decay: 1e-5
-max_epoch: 60
-lr_step: 50
-device_mode: 'GPU'
-device_gpu_id: '0'
+train:
+  scale: 4
+  batch_size: 16
+  learning_rate: 1e-4
+  weight_decay: 1e-5
+  max_epoch: 60
+  lr_step: 50
+  device_mode: 'GPU'
+  device_gpu_id: '0'
 
-dataset_dir: 'DIV2K_train_HR'
-patch_size: 96
-crop_num_per_image: 40
+  dataset_dir: 'DIV2K_train_HR'
+  patch_size: 96
+  crop_num_per_image: 40
 
-checkpoint_dir: 'output'
+  checkpoint_dir: 'output'
+
+inference:
+  scale: 4
+  checkpoint_path: 'output/checkpoint-17.ckpt'
+  input_dir: 'test_data/Set5'
+  input_suffix: '*.bmp'
+  output_dir: 'result_x4'
+
+  device_mode: 'GPU'
+  device_gpu_id: '0'

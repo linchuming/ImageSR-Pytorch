@@ -45,6 +45,7 @@ class DIV2K_Dataset(Dataset):
                 lr = misc.imresize(gt, 1.0 / self.scale, 'bicubic', 'F')
                 bic = misc.imresize(lr, self.scale * 1.0, 'bicubic', 'F')
                 self.samples.append({'gt': gt.copy(), 'lr': lr.copy(), 'bic': bic.copy()})
+                ## pytorch do not support [::-1] operation and using copy() can solve the problem
 
 
     def __getitem__(self, idx):
