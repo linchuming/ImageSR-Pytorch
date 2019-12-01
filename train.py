@@ -111,10 +111,10 @@ if __name__ == '__main__':
             step += 1
             # write to tensorboard
             if step % 40 == 0:
-                writer.add_scalar('mse_loss', mse_loss, step)
-                writer.add_image('bic', bic[0].clamp(0, 1), step)
-                writer.add_image('sr', sr[0].clamp(0, 1), step)
-                writer.add_image('gt', gt[0], step)
+                writer.add_scalar('loss/mse_loss', mse_loss, step)
+                writer.add_image('img/bic', bic[0].clamp(0, 1), step)
+                writer.add_image('img/sr', sr[0].clamp(0, 1), step)
+                writer.add_image('img/gt', gt[0], step)
 
             progress.update(1)
 
